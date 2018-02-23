@@ -1,0 +1,16 @@
+{
+  "name": "interactive.presenter-view",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.36",
+    "bootstrap": "^4.0.0",
+    "jquery": "^2.2.4",
+    "meteor-node-stubs": "^0.3.2",
+    "popper.js": "^1.12.9",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
