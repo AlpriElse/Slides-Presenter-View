@@ -25,8 +25,22 @@ socket.on("updateProgress", (data) => {
 });
 
 var insertToSlideProgress = Meteor.bindEnvironment(function(data) {
-  SlideProgress.insert({
-    student: data.student,
-    slideID: data.slideID
-  });
+  var results = SlideProgress.findOne({student: data.student});
+  console.log(results == undefined);
+  if (results == undefined) {
+    SlideProgress.insert({
+      student: data.student,
+      slideID: data.slideID
+    });
+  } else {
+    console.log("updating");
+     SlideProgress.update({
+       student: data.student
+     }, {
+       $set: {
+         slideID: data.slideID
+       }
+     });
+   }
+
 });
